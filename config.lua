@@ -4,7 +4,7 @@
 -- Forum: https://www.reddit.com/r/lunarvim/
 -- Discord: https://discord.com/invite/Xb9B4Ny
 require("user.keybinds")
-
+require("user.plugins.vimwiki")
 require("user.plugins.plugins")
 lvim.keys.normal_mode["|"] = ":vsp | enew<CR>"
 lvim.keys.normal_mode["-"] = ":sp | enew<CR>"
