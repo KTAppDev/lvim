@@ -1,6 +1,5 @@
-
 lvim.plugins = {
-    {
+  {
 
     "dreamsofcode-io/ChatGPT.nvim",
     event = "VeryLazy",
@@ -20,7 +19,7 @@ lvim.plugins = {
     event = "BufEnter",
     config = function()
       -- Change '<C-g>' here to any keycode you like.
-      vim.keymap.set("i", "<localleader>a", function()
+      vim.keymap.set("i", "<Right>", function()
         return vim.fn["codeium#Accept"]()
       end, { expr = true })
       vim.keymap.set("i", "<localleader>]", function()
@@ -44,9 +43,18 @@ lvim.plugins = {
   },
   {
     'ggandor/lightspeed.nvim',
-    {
-      'romgrk/barbar.nvim',
-      dependencies = { 'nvim-tree/nvim-web-devicons' },
-    },
   },
+  {
+    "vimwiki/vimwiki",
+    config = function()
+      vim.g.vimwiki_list = {
+        {
+          path = '~/vimwiki/',
+          syntax = 'markdown',
+          ext = '.md',
+        },
+      }
+    end
+  },
+
 }
