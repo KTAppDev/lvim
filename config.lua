@@ -6,4 +6,5 @@
 require("user.keybinds")
 
 require("user.plugins.plugins")
-
+lvim.keys.normal_mode["|"] = ":vsp | enew<CR>"
+lvim.keys.normal_mode["-"] = ":sp | enew<CR>"
