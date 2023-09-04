@@ -9,9 +9,14 @@
 --   "<cmd>lua require'telescope'.extensions.project.project{}<CR>", "Projects"
 -- }
 lvim.format_on_save.enabled = true
-lvim.builtin.which_key.mappings["w"] = nil
 
+lvim.builtin.which_key.mappings["w"] = nil
+-- vim.g.vimwiki_ext2syntax = { ['.md'] = 'markdown' }
+-- vim.g.vimwiki_list = {
+--   { path = '~/vimwiki/', syntax = 'markdown', ext = '.md' }
+-- }
 require("user.keybinds")
 require("user.plugins.plugins")
+require("user.themes.themes")
 lvim.keys.normal_mode["|"] = ":vsp | enew<CR>"
 lvim.keys.normal_mode["-"] = ":sp | enew<CR>"

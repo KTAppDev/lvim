@@ -46,15 +46,17 @@ lvim.plugins = {
   },
   {
     "vimwiki/vimwiki",
-    config = function()
-      vim.g.vimwiki_list = {
-        {
-          path = '~/vimwiki/',
-          syntax = 'markdown',
-          ext = '.md',
-        },
-      }
-    end
+    -- config = function()
+    --   vim.g.vimwiki_list = {
+    --     {
+    --       path = '~/vimwiki2/',
+    --       syntax = 'markdown',
+    --       ext = '.md',
+    --     },
+    --   }
+    -- end
   },
-
+  {
+    'ThePrimeagen/harpoon'
+  },
 }
