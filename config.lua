@@ -4,19 +4,26 @@
 -- Forum: https://www.reddit.com/r/lunarvim/
 -- Discord: https://discord.com/invite/Xb9B4Ny
 -- example of assigning key
---
--- lvim.builtin.which_key.mappings["P"] = {
---   "<cmd>lua require'telescope'.extensions.project.project{}<CR>", "Projects"
--- }
+--HARPOON KEYMAPS
+lvim.builtin.which_key.mappings["v"] = {
+  "<cmd>lua require('harpoon.ui').toggle_quick_menu()<CR>", "Harpoon Menu"
+}
+lvim.builtin.which_key.mappings["m"] = {
+  "<cmd>lua require('harpoon.mark').add_file()<CR>", "Harpoon File"
+}
+lvim.keys.normal_mode["n"] = ":lua require('harpoon.ui').nav_next()<CR>"
+lvim.keys.normal_mode["N"] = ":lua require('harpoon.ui').nav_prev()<CR>"
+lvim.keys.normal_mode["N"] = ":lua require('harpoon.ui').nav_prev()<CR>"
+lvim.builtin.which_key.mappings["w"] = nil
+lvim.keys.normal_mode["|"] = ":vsp | enew<CR>"
+lvim.keys.normal_mode["-"] = ":sp | enew<CR>"
+
 lvim.format_on_save.enabled = true
 
-lvim.builtin.which_key.mappings["w"] = nil
 -- vim.g.vimwiki_ext2syntax = { ['.md'] = 'markdown' }
 -- vim.g.vimwiki_list = {
 --   { path = '~/vimwiki/', syntax = 'markdown', ext = '.md' }
 -- }
 require("user.keybinds")
 require("user.plugins.plugins")
-require("user.themes.themes")
-lvim.keys.normal_mode["|"] = ":vsp | enew<CR>"
-lvim.keys.normal_mode["-"] = ":sp | enew<CR>"
+require("user.plugins.auto-save")
