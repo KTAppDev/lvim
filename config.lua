@@ -1,24 +1,30 @@
--- Read the docs: https://www.lunarvim.org/docs/configuration
+-- Read the docs: https://jww.lunarvim.org/docs/configurotion
+-- g
 
 -- Video Tutorials: https://www.youtube.com/watch?v=sFA9kX-Ud_c&list=PLhoH5vyxr6QqGu0i7tt_XoVK9v-KvZ3m6
+--
 -- Forum: https://www.reddit.com/r/lunarvim/
 -- Discord: https://discord.com/invite/Xb9B4Ny
 -- example of assigning key
 --HARPOON KEYMAPS
-lvim.builtin.which_key.mappings["v"] = {
-  "<cmd>lua require('harpoon.ui').toggle_quick_menu()<CR>", "Harpoon Menu"
+lvim.builtin.which_key.mappings["h"] = {
+  "<cmd>lua require('harpoon.ui').toggle_quick_menu()<CR>",
+  "Harpoon Menu",
 }
-lvim.builtin.which_key.mappings["m"] = {
-  "<cmd>lua require('harpoon.mark').add_file()<CR>", "Harpoon File"
+lvim.builtin.which_key.mappings["a"] = {
+  "<cmd>lua require('harpoon.mark').add_file()<CR>",
+  "Harpoon File",
 }
 lvim.keys.normal_mode["n"] = ":lua require('harpoon.ui').nav_next()<CR>"
 lvim.keys.normal_mode["N"] = ":lua require('harpoon.ui').nav_prev()<CR>"
 lvim.keys.normal_mode["N"] = ":lua require('harpoon.ui').nav_prev()<CR>"
-lvim.builtin.which_key.mappings["w"] = nil
+-- disable leader space default command
+
+-- lvim.builtin.which_key.mappings["<leader><space>"] = nil
 lvim.keys.normal_mode["|"] = ":vsp | enew<CR>"
 lvim.keys.normal_mode["-"] = ":sp | enew<CR>"
 
-lvim.format_on_save.enabled = true
+lvim.format_on_save.enabled = false
 
 -- vim.g.vimwiki_ext2syntax = { ['.md'] = 'markdown' }
 -- vim.g.vimwiki_list = {
@@ -26,4 +32,3 @@ lvim.format_on_save.enabled = true
 -- }
 require("user.keybinds")
 require("user.plugins.plugins")
-require("user.plugins.auto-save")

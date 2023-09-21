@@ -19,7 +19,7 @@ lvim.plugins = {
     event = "BufEnter",
     config = function()
       -- Change '<C-g>' here to any keycode you like.
-      vim.keymap.set("i", "<Right>", function()
+      vim.keymap.set("i", "<localleader>", function()
         return vim.fn["codeium#Accept"]()
       end, { expr = true })
       vim.keymap.set("i", "<localleader>]", function()
@@ -27,12 +27,6 @@ lvim.plugins = {
       end, { expr = true })
     end,
   },
-  -- {
-  --   "m4xshen/hardtime.nvim",
-  --   dependencies = { "MunifTanjim/nui.nvim", "nvim-lua/plenary.nvim" },
-  --   lazy = true,
-  --   opts = {},
-  -- },
   {
     "NvChad/nvim-colorizer.lua",
     opts = {
@@ -45,18 +39,19 @@ lvim.plugins = {
     'ggandor/lightspeed.nvim',
   },
   {
-    "vimwiki/vimwiki",
-    -- config = function()
-    --   vim.g.vimwiki_list = {
-    --     {
-    --       path = '~/vimwiki2/',
-    --       syntax = 'markdown',
-    --       ext = '.md',
-    --     },
-    --   }
-    -- end
-  },
-  {
     'ThePrimeagen/harpoon'
   },
+  -- {
+  --   "Pocco81/auto-save.nvim",
+  --   config = function()
+  --     require("auto-save").setup {
+  --       -- your config goes here
+  --       -- or just leave it empty :)
+  --     }
+  --   end,
+  -- },
+  { "kjssad/quantum.vim" },
+
+
+
 }

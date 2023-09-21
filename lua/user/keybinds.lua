@@ -1,18 +1,15 @@
-
 -- Keymaps are automatically loaded on the VeryLazy event
 -- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
 -- Add any additional keymaps here
 local opts = { noremap = true, silent = true }
 local keymap = vim.api.nvim_set_keymap
 -- vim.g.maplocalleader("\\")
-
-vim.keymap.set(
-  "n",
-  "<leader>sx",
-  require("telescope.builtin").resume,
-  { noremap = true, silent = true, desc = "Last Telescope" }
-)
+-- set leader leader to telescope find files
+-- vim.g.mapleader = "\\"
+-- vim.g.maplocalleader = "\\"
+-- vim.keymap.set("n", "<leader><space>", "<cmd>Telescope find_files<cr>", { noremap = true, silent = true })
 -- normal mode 'jj' to escape
+
 keymap("i", "jj", "<esc>", opts)
 -- write file with localleader + w
 keymap("n", "<localleader>w", ":wa<cr>", { noremap = true, silent = true, desc = "Write file" })
@@ -51,3 +48,6 @@ keymap("n", "<localleader>ge", ":ChatGPTRun explain_code<cr>", opts)
 keymap("n", "<localleader>gf", ":ChatGPTRun fix_bugs<cr>", opts)
 keymap("n", "<localleader>go", ":ChatGPTRun optimize_code<cr>", opts)
 keymap("n", "<localleader>gs", ":ChatGPTRun summarize<cr>", opts)
+keymap("n", "<leader>cL", [[:%s/console\.log([^)]*);//g<CR>]], { noremap = true, silent = true })
+-- Map 'hh' to paste from yank register 0
+keymap("n", "<C-v>", '"0p', { noremap = true, silent = true })
