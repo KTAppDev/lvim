@@ -9,8 +9,16 @@ local keymap = vim.api.nvim_set_keymap
 -- vim.g.maplocalleader = "\\"
 -- vim.keymap.set("n", "<leader><space>", "<cmd>Telescope find_files<cr>", { noremap = true, silent = true })
 -- normal mode 'jj' to escape
+--
+vim.keymap.set(
+  "n",
+  "<leader>sx",
+  require("telescope.builtin").resume,
+  { noremap = true, silent = true, desc = "Last Telescope" }
+)
 
-keymap("i", "jj", "<esc>", opts)
+keymap("i", "jk", "<esc>", opts)
+keymap("i", "jj", "<esc> :wa<cr>", opts)
 -- write file with localleader + w
 keymap("n", "<localleader>w", ":wa<cr>", { noremap = true, silent = true, desc = "Write file" })
 -- quit with localleader + q

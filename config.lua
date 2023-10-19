@@ -5,6 +5,10 @@
 --
 -- Forum: https://www.reddit.com/r/lunarvim/
 -- Discord: https://discord.com/invite/Xb9B4Ny
+require("user.keybinds")
+require("user.plugins")
+require("user.themes")
+-- require('leap').add_default_mappings()
 -- example of assigning key
 --HARPOON KEYMAPS
 lvim.builtin.which_key.mappings["h"] = {
@@ -30,5 +34,4 @@ lvim.format_on_save.enabled = false
 -- vim.g.vimwiki_list = {
 --   { path = '~/vimwiki/', syntax = 'markdown', ext = '.md' }
 -- }
-require("user.keybinds")
-require("user.plugins.plugins")
+

@@ -1,5 +1,11 @@
 lvim.plugins = {
   {
+    'ggandor/leap.nvim',
+  },
+  {
+    "ThePrimeagen/harpoon",
+  },
+  {
 
     "dreamsofcode-io/ChatGPT.nvim",
     event = "VeryLazy",
@@ -35,23 +41,5 @@ lvim.plugins = {
       },
     },
   },
-  {
-    'ggandor/lightspeed.nvim',
-  },
-  {
-    'ThePrimeagen/harpoon'
-  },
-  -- {
-  --   "Pocco81/auto-save.nvim",
-  --   config = function()
-  --     require("auto-save").setup {
-  --       -- your config goes here
-  --       -- or just leave it empty :)
-  --     }
-  --   end,
-  -- },
-  { "kjssad/quantum.vim" },
-
-
 
 }
